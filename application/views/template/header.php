@@ -8,10 +8,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <!-- Praktikum 4 bagian 1 nomor 3 -->
     <style>
     .badge{
         margin-left: 3px;
+    }
+    #logoweb, #logoemail, #logoinsta, #logofb{
+      width: 25px;
+    }
+    a{
+      color: black;
+    }
+    a:hover{
+      color: white;
+      text-decoration: none;
     }
     </style>
     <title>Home Toksedo</title>
@@ -19,7 +28,7 @@
   <body>
         <!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">TOKSEDO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,10 +38,14 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                <li id="product" class="nav-item">
+                  <a class="nav-link" href="#">Product</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li id="testimoni" class="nav-item">
+                  <a class="nav-link" href="#">Testimoni</a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
                   </a>
@@ -42,14 +55,23 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                </li> -->
+
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
               </form>
+              <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a>
+                </li>
+              </ul>
             </div>
           </nav>
