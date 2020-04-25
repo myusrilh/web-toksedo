@@ -1,10 +1,9 @@
-<h1>ini halaman produk</h1>
 <div class="container">
     <!-- baris_1 -->
     <div class="row mt-5">
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -15,7 +14,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -27,7 +26,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -42,7 +41,7 @@
     <div class="row mt-5">
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -53,7 +52,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -65,7 +64,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -80,7 +79,7 @@
     <div class="row mt-5 mb-5">
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -91,7 +90,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
@@ -103,7 +102,7 @@
 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="nama_produk">
+                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
                 <div class="card-body">
                     <h5 class="card-title">Nama Produk</h5>
                     <p class="card-text">Harga Produk</p>
