@@ -23,14 +23,14 @@ class login_model extends CI_Model {
     }
 
     public function registrasi(){
-        $data = array(
+        $data = [
             "nama" => $this->input->post('nama'),
             "alamat" => $this->input->post('alamat'),
             "pekerjaan" => $this->input->post('pekerjaan'),
             "username" => $this->input->post('username'),
             "password" => $this->input->post('password'),
             "level" => "customer"
-        );
+        ];
         $this->db->insert('user', $data);
         
     }

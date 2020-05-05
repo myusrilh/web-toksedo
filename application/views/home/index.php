@@ -1,5 +1,4 @@
 <div class="container" style="min-height:768 px">
-    <?php var_dump($this->session->userdata('username')); ?>
     <!-- Banner Slideshow -->
     <!-- margin : top right bottom left -->
     <!-- tambah data-... untuk mengubah opsi (contoh = data-interval untuk mengubah lama slide ditampilkan) -->
