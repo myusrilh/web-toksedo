@@ -1,5 +1,5 @@
 <div class="container" style="min-height:768 px">
-    
+    <?php var_dump($this->session->userdata('username')); ?>
     <!-- Banner Slideshow -->
     <!-- margin : top right bottom left -->
     <!-- tambah data-... untuk mengubah opsi (contoh = data-interval untuk mengubah lama slide ditampilkan) -->
@@ -48,78 +48,20 @@
 
         <div class="card-deck" style="30px auto">
             <div class="card-columns">
+                <?php foreach($produk as $prd):?>
                 <div class="card border-success" style="width:200px;">
                     <div class="text-center">
                         <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
+                        <h4 class="card-title"><?php echo $prd['nama'];?></h4>
+                        <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
                         <div class="text-right">
                             <a href="#" class="btn btn-primary">Detail Produk</a>
                         </div>
                     </div>
                 </div>
-                <div class="card border-success" style="width:200px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:200px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:200px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:200px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:200px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
 
@@ -131,78 +73,20 @@
         <!-- Sale For Today -->
         <div class="card-deck" style="margin:20px auto 200px">
             <div class="card-columns">
+                <?php foreach($produk as $prd):?>
                 <div class="card border-success" style="width:285px;">
                     <div class="text-center">
                         <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
+                        <h4 class="card-title"><?php echo $prd['nama'];?></h4>
+                        <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
                         <div class="text-right">
                             <a href="#" class="btn btn-primary">Detail Produk</a>
                         </div>
                     </div>
                 </div>
-                <div class="card border-success" style="width:285px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:285px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:285px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:285px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-success" style="width:285px;">
-                    <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Pupuk Kompos</h4>
-                        <p class="card-text">Harga : Rp. 90.000,-</p>
-                        <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
     </div>

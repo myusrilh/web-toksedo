@@ -1,117 +1,22 @@
-<div class="container">
-    <!-- baris_1 -->
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
+<div class="container my-5">
+    <div class="card-deck" style="30px auto">
+        <div class="card-columns">
+            <?php foreach($produk as $prd):?>
+            <div class="card border-success" style="width:200px;">
+                <div class="text-center">
+                    <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
+                    <h4 class="card-title"><?php echo $prd['nama'];?></h4>
+                    <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
+                    <div class="text-right">
+                        <a href="#" class="btn btn-primary">Detail Produk</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
+            <?php endforeach;?>
         </div>
     </div>
-    <!-- baris_1 -->
-
-    <!-- baris_2 -->
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- baris_2 -->
-
-    <!-- baris_3 -->
-    <div class="row mt-5 mb-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url();?>images/foto-produk.png" alt="nama_produk">
-                <div class="card-body">
-                    <h5 class="card-title">Nama Produk</h5>
-                    <p class="card-text">Harga Produk</p>
-                    <a href="#" class="btn btn-primary float-right">Detail Produk</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- baris_3 -->
 
         <!-- pagination -->
         <nav aria-label="Page navigation example">
