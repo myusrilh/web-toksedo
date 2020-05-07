@@ -7,10 +7,10 @@
                     <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title"><?php echo $prd['nama'];?></h4>
-                    <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
+                    <h4 class="card-title"><?= $prd['nama'];?></h4>
+                    <p class="card-text">Harga : Rp. <?= $prd['harga'];?></p>
                     <div class="text-right">
-                        <a href="#" class="btn btn-primary">Detail Produk</a>
+                        <a href="<?php echo base_url();?>produk/detail/<?= $prd['idProduk'];?>" class="btn btn-primary">Detail Produk</a>
                     </div>
                 </div>
             </div>

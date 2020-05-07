@@ -164,7 +164,7 @@
   </head>
   <body>
         <!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> -->
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-success">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-info">
             <a class="navbar-brand" href="#">TOKSEDO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -173,13 +173,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a id="home" class="nav-link" href="<?php echo base_url();?>">Home<span class="sr-only">(current)</span></a>
+                  <a id="home" class="nav-link" href="<?php echo base_url();?>admin/index">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li id="produk" class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>produk">Produk</a>
+                  <a class="nav-link" href="<?php echo base_url();?>admin/produk">Produk</a>
                 </li>
                 <li id="testimoni" class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>testimoni">Testimoni</a>
+                  <a class="nav-link" href="<?php echo base_url();?>admin/user">User</a>
                 </li>
 
                 <!-- <li class="nav-item dropdown">
@@ -203,20 +203,19 @@
                 <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
               </form> -->
               <ul class="navbar-nav">
-              <?php if($this->session->userdata('level')=="customer" || $this->session->userdata('level')=="konsultan" ):?>
+              <?php if($this->session->userdata('level')=="admin"):?>
                 <li class="nav-item">
                   <a class="nav-link mr-2" style = "font-size:25px; line-height: 50%;" href="#menu-toggle" id="menu-toggle"><span title="<?= $this->session->userdata('username'); ?>" class="fa fa-user-circle-o" style="color:black;"></span></a>
                 </li>
                 <li class="nav-item">
                   <a class=" btn btn-outline-danger" href="<?php echo base_url();?>login/logout">Logout</a>
                 </li>
-              <?php else:?>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class=" btn btn-primary mr-2" href="<?php echo base_url();?>login">Login</a>
                 </li>
                 <li class="nav-item">
                   <a class=" btn btn-warning" href="<?php echo base_url();?>register">Register</a>
-                </li>
+                </li> -->
               <?php endif;?>
               </ul>
             </div>

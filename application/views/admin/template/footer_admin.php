@@ -1,7 +1,7 @@
 </div> <!-- /#wrapper -->
 
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color pt-4 bg-success">
+<footer class="page-footer font-small mdb-color pt-4 bg-info">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -50,7 +50,7 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">For More Information</h6>
         <p>
-          <img id="logoweb" src="<?php echo base_url();?>images/logo-web.png" alt="logo website"> <a id="web" href="<?php echo base_url();?>"><b>www.toksedo.com</b></a></p>
+          <img id="logoweb" src="<?php echo base_url();?>images/logo-web.png" alt="logo website"> <a id="web" href="#"><b>www.toksedo.com</b></a></p>
         <p>
           <img id="logoemail" src="<?php echo base_url();?>images/logo-email.png" alt="logo email"> <b>toksedo@gmail.com</b></p>
         <p>
@@ -73,7 +73,7 @@
 
         <!--Copyright-->
         <p class="text-center text-md-left">&copy; 2020 Copyright:
-          <a href="<?php echo base_url();?>">
+          <a href="#">
             <strong> TOKSEDO Website</strong>
           </a>
         </p>

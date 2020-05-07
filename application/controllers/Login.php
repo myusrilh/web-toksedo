@@ -47,7 +47,7 @@ class login extends CI_Controller {
                 # code...
                 redirect('home/index');
             }elseif($this->session->userdata('level')=="admin"){
-                redirect('login/index');
+                redirect('admin/index');
             }
             
         } else {

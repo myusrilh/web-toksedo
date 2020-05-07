@@ -17,6 +17,10 @@ class produk_model extends CI_Model {
         return $this->db->get_where('kategori',['idKategori'=>$idKategori])->row_array();
     }
 
+    public function getProdukByID($id){
+        return $this->db->get_where('produk',['idProduk'=>$id])->row_array();
+    }
+
 }
 
 /* End of file produk_model.php */

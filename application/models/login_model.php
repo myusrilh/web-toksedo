@@ -35,6 +35,10 @@ class login_model extends CI_Model {
         
     }
 
+    public function getAllUser(){
+        return $this->db->get('user')->result_array();
+    }
+
 }
 
 /* End of file login_model.php */

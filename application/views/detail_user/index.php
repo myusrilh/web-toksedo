@@ -1,65 +1,21 @@
-<!-- static sidebar (not move) -->
-<div class="wrapper">
-
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h5>Profil Akun</h5>
-        </div>
-
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+<div id="wrapper" class="">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper" class="bg-success">
+                <ul class="sidebar-nav">
+                    <li class="pt-3 text-center"><a id="list-profile" href="#"> <h5><i class="fa fa-user"></i> Nama Lengkap</h5> </a></li>
+                    <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('nama'); ?></p> </a></li>
+                    <hr>
+                    <li class="text-center pt-2"><a id="list-profile" href="#"> <h5><i class="fa fa-home"></i> Alamat</h5> </a></li>
+                    <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('alamat'); ?></p> </a></li>
+                    <hr>
+                    <li class="text-center pt-2"><a id="list-profile" href="#"> <h5><i class="fa fa-briefcase"></i> Pekerjaan</h5> </a></li>
+                    <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('pekerjaan'); ?></p> </a></li>
+                    <hr>
+                    <?php if ($this->session->userdata('level') == "konsultan"):?>
+                    <li class="text-center pt-2"><a id="list-profile" href="#"> <h5><i class="fa fa-lock"></i> Role</h5> </a></li>
+                    <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('level'); ?></p> </a></li>
+                    <?php endif;?>
+                    <li class="text-center"><a class="btn btn-outline-light" href="#">Edit Profile</a></li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Page Content -->
-    <div id="content">
-        <!-- We'll fill this with dummy content -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fa fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-            </div>
-        </nav>
-    </div>
-
-</div> 
+            </div> <!-- /#sidebar-wrapper -->
+            

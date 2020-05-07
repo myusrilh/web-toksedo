@@ -32,9 +32,9 @@
     <div class="container">
         <blockquote class="blockquote">
             <mark>
-                Ilmu memang berserakan di mana-mana di seluruh muka bumi ini, 
-                jauh lebih banyak dibanding yang ada dalam gedung sekolah atau kampus. 
-                Bahkan seekor ayam pun bisa memberikan ilmu dan inspirasi yang sangat berharga.
+                <b>Orang pintar </b> kebanyakan ide dan akhirnya
+                tidak ada satupun yang menjadi kenyataan.
+                <b>Orang goblok </b> cuma punya satu ide dan itu menjadi kenyataan.
             </mark>
         </blockquote>
         <footer class="blockquote-footer">
@@ -53,10 +53,10 @@
                         <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title"><?php echo $prd['nama'];?></h4>
-                        <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
+                        <h4 class="card-title"><?= $prd['nama'];?></h4>
+                        <p class="card-text">Harga : Rp. <?= $prd['harga'];?></p>
                         <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
+                            <a href="<?php echo base_url();?>produk/detail/<?= $prd['idProduk'];?>" class="btn btn-primary">Detail Produk</a>
                         </div>
                     </div>
                 </div>
@@ -78,10 +78,10 @@
                         <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title"><?php echo $prd['nama'];?></h4>
-                        <p class="card-text">Harga : Rp. <?php echo $prd['harga'];?></p>
+                        <h4 class="card-title"><?= $prd['nama'];?></h4>
+                        <p class="card-text">Harga : Rp. <?= $prd['harga'];?></p>
                         <div class="text-right">
-                            <a href="#" class="btn btn-primary">Detail Produk</a>
+                            <a href="<?php echo base_url();?>produk/detail/<?= $prd['idProduk'];?>" class="btn btn-primary">Detail Produk</a>
                         </div>
                     </div>
                 </div>

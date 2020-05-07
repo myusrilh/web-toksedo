@@ -8,6 +8,10 @@ class testimoni extends CI_Controller {
     {
         $data['title'] = "Testimoni";
         $this->load->view('template/header',$data);
+        if ($this->session->userdata('nama')!=null) {
+            # code...
+            $this->load->view('detail_user/index');   
+        }
         $this->load->view('testimoni/index');
         $this->load->view('template/footer');
     }
