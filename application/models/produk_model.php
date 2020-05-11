@@ -67,11 +67,11 @@ class produk_model extends CI_Model {
             "detail" => $this->input->post('detail'),
             "idKategori" => $this->input->post('kategori')
         ];
-        $this->db->join('kategori', 'user.idKategori = kategori.idKategori');
         $this->db->set($data);
-        $this->db->where('kategori.idKategori', $this->input->post('kategori'));
+        //$this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
+        //$this->db->where('kategori.idKategori', $this->input->post('kategori'));
         $this->db->where('idProduk',$id);
-        $this->db->update('user', $data);
+        $this->db->update('produk', $data);
 
         // $this->db->join('user_data', 'user.id = user_data.id');
         // $this->db->set($data);
@@ -93,7 +93,10 @@ class produk_model extends CI_Model {
         return $this->db->get()->result_array();
     }
 
-
+    public function hapusDataProduk($id){ 
+        $this->db->where('idProduk',$id);
+        $this->db->delete('produk');
+    }
 }
 
 /* End of file produk_model.php */

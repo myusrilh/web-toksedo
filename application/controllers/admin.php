@@ -94,6 +94,13 @@ class admin extends CI_Controller {
         }
     }
 
+    public function hapusProduk($id)
+    {
+        $this->produk_model->hapusDataProduk($id);
+        $this->session->set_flashdata('flashdata', 'dihapus');
+        redirect('admin/produk', 'refresh');
+    }
+
     public function user()
     {
         $data['title'] = "Manage User";
