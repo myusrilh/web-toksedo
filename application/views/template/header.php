@@ -36,7 +36,7 @@
       height: 100%;
       margin-right: -250px;
       overflow-y: auto;
-      background: #000;
+      background: #fff;
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
@@ -44,6 +44,7 @@
     }
 
     #wrapper.toggled #sidebar-wrapper {
+      box-shadow: -5px 5px 15px grey;
       width: 250px;
     }
 
@@ -82,7 +83,7 @@
 
     .sidebar-nav li #list-profile:hover {
       text-decoration: none;
-      color: #fff;
+      color: green;
       background: rgba(255, 255, 255, 0.2);
     }
 
@@ -160,7 +161,11 @@
         color: #aaa;
     }
     </style>
+    <?php if($this->session->userdata('level')!=null): ?>
+    <title><?= $title . " : " . ucfirst($this->session->userdata('level')) ?></title>
+    <?php else: ?>
     <title><?= $title ?></title>
+    <?php endif; ?>
   </head>
   <body>
         <!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> -->
@@ -181,6 +186,11 @@
                 <li id="testimoni" class="nav-item">
                   <a class="nav-link" href="<?php echo base_url();?>testimoni">Testimoni</a>
                 </li>
+              <?php if($this->session->userdata('level')=="customer" || $this->session->userdata('level')=="konsultan" ):?>
+                <li id="chat" class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>">Chat</a>
+                </li>
+                <?php endif;?>
 
                 <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -205,7 +215,7 @@
               <ul class="navbar-nav">
               <?php if($this->session->userdata('level')=="customer" || $this->session->userdata('level')=="konsultan" ):?>
                 <li class="nav-item">
-                  <a class="nav-link mr-2" style = "font-size:25px; line-height: 50%;" href="#menu-toggle" id="menu-toggle"><span title="<?= $this->session->userdata('username'); ?>" class="fa fa-user-circle-o" style="color:black;"></span></a>
+                  <a class="nav-link mr-2" style = "font-size:25px; line-height: 50%;" href="#menu-toggle" id="menu-toggle"><span title="<?= $this->session->userdata('username'); ?>" id="user-logo" class="fa fa-user-circle-o" style="color:black;"></span></a>
                 </li>
                 <li class="nav-item">
                   <a class=" btn btn-outline-danger" href="<?php echo base_url();?>login/logout">Logout</a>

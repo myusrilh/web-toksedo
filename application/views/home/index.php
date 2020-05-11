@@ -1,6 +1,14 @@
 <div class="container" style="min-height:768 px">
     <!-- Banner Slideshow -->
     <!-- margin : top right bottom left -->
+    <?php if ($this->session->flashdata('flash-data')) : ?>
+        <div class="mt-3 alert alert-success" role="alert">
+            Data user <strong>berhasil</strong> <?= $this->session->flashdata('flash-data'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>
     <!-- tambah data-... untuk mengubah opsi (contoh = data-interval untuk mengubah lama slide ditampilkan) -->
     <div id="carouselExampleIndicators" class="carousel slide" data-interval="3000" data-ride="carousel" style="margin:50px auto 30px">
         <ol class="carousel-indicators">

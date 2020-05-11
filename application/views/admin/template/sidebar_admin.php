@@ -11,9 +11,9 @@
                     <li class="pt-3 text-center"><a id="list-profile" href="#"> <h5><i class="fa fa-user"></i> Nama Lengkap</h5> </a></li>
                     <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('nama'); ?></p> </a></li>
                     <hr>
-                    <li class="text-center pt-2"><a id="list-profile" href="#"> <h5><i class="fa fa-lock"></i> Role</h5> </a></li>
+                    <li class="text-center pt-2"><a id="list-profile" href="#"> <h5><i class="fa fa-users"></i> Role</h5> </a></li>
                     <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('level'); ?></p> </a></li>
-                    <li class="text-center"><a class="btn btn-outline-dark" href="#">Edit Profile</a></li>
+                    <li class="text-center"><a class="btn btn-outline-info" href="<?php echo base_url();?>edit_profile/edit/<?php echo $this->session->userdata('idUser'); ?>">Edit Profile</a></li>
                 </ul>
             </div> <!-- /#sidebar-wrapper -->
             

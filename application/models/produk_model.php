@@ -13,13 +13,86 @@ class produk_model extends CI_Model {
         return $query->result_array();
     }
 
+    
+    public function getAllProdukAdmin()
+    {
+        $this->db->select('idProduk,produk.idKategori as idk,namaKategori,nama,harga,detail');
+        $this->db->from('produk');
+        $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function getKategoriByID($idKategori){
         return $this->db->get_where('kategori',['idKategori'=>$idKategori])->row_array();
     }
 
     public function getProdukByID($id){
-        return $this->db->get_where('produk',['idProduk'=>$id])->row_array();
+        $this->db->select('idProduk,produk.idKategori, namaKategori,nama,harga,detail');
+        $this->db->from('produk');
+        $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
+        $this->db->where('idProduk', $id);
+        $query = $this->db->get();
+        return $query->result_array();
     }
+
+    // public function getIDKategori(){
+    //     $this->db->select('idKategori');
+    //     $this->db->from('kategori');
+    //     return $this->db->get();
+    // }
+
+    public function getAllPembayaran(){
+        $query = $this->db->get('pembayaran');
+        return $query->result_array();
+    }
+
+    public function getKategori(){
+        return $this->db->get('kategori')->result_array();
+    }
+
+    public function tambahDataProduk(){
+        $data = [
+            'idKategori' => $this->input->post('kategori'),
+            'nama' => $this->input->post('nama'),
+            'harga' => $this->input->post('harga'),
+            'detail' => $this->input->post('detail')
+        ];
+        $this->db->insert('produk', $data);
+    }
+    public function ubahDataProduk($id){
+        $data = [
+            "nama" => $this->input->post('nama'),
+            "harga" => $this->input->post('harga'),
+            "detail" => $this->input->post('detail'),
+            "idKategori" => $this->input->post('kategori')
+        ];
+        $this->db->join('kategori', 'user.idKategori = kategori.idKategori');
+        $this->db->set($data);
+        $this->db->where('kategori.idKategori', $this->input->post('kategori'));
+        $this->db->where('idProduk',$id);
+        $this->db->update('user', $data);
+
+        // $this->db->join('user_data', 'user.id = user_data.id');
+        // $this->db->set($data);
+        // $this->db->where('user_data.id',$id);
+        // $this->db->update('user_data');
+        
+    }
+    
+    public function cariDataProduk(){
+        $keyword=$this->input->post('keyword');
+        $this->db->like('idProduk',$keyword);
+        $this->db->or_like('namaKategori',$keyword);
+        $this->db->or_like('nama',$keyword);
+        $this->db->or_like('harga',$keyword);
+        $this->db->or_like('detail',$keyword);
+        $this->db->from('produk');
+        $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
+        
+        return $this->db->get()->result_array();
+    }
+
 
 }
 

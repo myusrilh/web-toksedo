@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row mt-3">
-        <a href="<?= base_url(); ?>admin/tambah" class="btn btn-primary">Tambah Data</a>
+        <a href="<?= base_url(); ?>admin/tambahuser" class="btn btn-primary">Tambah Data</a>
     </div>
     <div class="row mt-3">
         <form action="" method="POST">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Cari produk" name="keyword" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Cari user" name="keyword" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">Cari</button>
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i> Cari</button>
                 </div>
             </div>
         </form>
@@ -34,6 +34,7 @@
                     <th scope="col">No</th>
                     <th scope="col">ID User</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Gender</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Pekerjaan</th>
                     <th scope="col">Username</th>
@@ -52,6 +53,7 @@
                         <td> <?php echo $no; ?> </td>
                         <td><?= $usr['idUser']; ?></td>
                         <td><?= $usr['nama']; ?></td>
+                        <td><?= $usr['gender']; ?></td>
                         <td><?= $usr['alamat']; ?></td>
                         <td><?= $usr['pekerjaan']; ?></td>
                         <td><?= $usr['username']; ?></td>
@@ -60,10 +62,10 @@
                         <td><a href="<?= base_url(); ?>admin/editUser/<?= $usr['idUser']; ?>" class="badge badge-success">Edit</a></td>
                     </tr>
                 </tbody>
-                <?php endif;?>
                 <?php
                 $no++;
                 ?>
+                <?php endif;?>
             <?php endforeach; ?>
         </table>
     </div>

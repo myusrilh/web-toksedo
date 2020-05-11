@@ -82,7 +82,7 @@
 
     .sidebar-nav li #list-profile:hover {
       text-decoration: none;
-      color: #fff;
+      color: #2bdff0;
       background: rgba(255, 255, 255, 0.2);
     }
 
@@ -160,7 +160,7 @@
         color: #aaa;
     }
     </style>
-    <title><?= $title ?></title>
+    <title><?= $title ." : ". ucfirst($this->uri->segment(1)); ?></title>
   </head>
   <body>
         <!-- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> -->
@@ -178,8 +178,11 @@
                 <li id="produk" class="nav-item">
                   <a class="nav-link" href="<?php echo base_url();?>admin/produk">Produk</a>
                 </li>
-                <li id="testimoni" class="nav-item">
+                <li id="user" class="nav-item">
                   <a class="nav-link" href="<?php echo base_url();?>admin/user">User</a>
+                </li>
+                <li id="testimoni" class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>admin/index">Testimoni</a>
                 </li>
 
                 <!-- <li class="nav-item dropdown">
@@ -205,7 +208,7 @@
               <ul class="navbar-nav">
               <?php if($this->session->userdata('level')=="admin"):?>
                 <li class="nav-item">
-                  <a class="nav-link mr-2" style = "font-size:25px; line-height: 50%;" href="#menu-toggle" id="menu-toggle"><span title="<?= $this->session->userdata('username'); ?>" class="fa fa-user-circle-o" style="color:black;"></span></a>
+                  <a class="nav-link mr-2" style = "font-size:25px; line-height: 50%;" href="#menu-toggle" id="menu-toggle"><span title="<?= $this->session->userdata('username'); ?>" id="user-logo" class="fa fa-user-circle-o" style="color:black;"></span></a>
                 </li>
                 <li class="nav-item">
                   <a class=" btn btn-outline-danger" href="<?php echo base_url();?>login/logout">Logout</a>

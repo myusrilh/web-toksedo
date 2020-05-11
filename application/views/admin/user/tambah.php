@@ -1,5 +1,5 @@
 <?php
-form_open('register/input');
+form_open('admin/tambahuser');
 ?>
 <div class="container py-1">
     <div class="row">
@@ -9,7 +9,7 @@ form_open('register/input');
                     <!-- form card login -->
                     <div class="card rounded-0">
                         <div class="card-header">
-                            <h3 class="mb-0">Register</h3>
+                            <h3 class="mb-0">Tambah Data User</h3>
                         </div>
                         <div class="card-body">
                             <!-- Muncul alert -->
@@ -25,13 +25,7 @@ form_open('register/input');
                                     <input type="text" class="form-control form-control-lg rounded-0" name="nama" id="nama" placeholder="Nama Lengkap">
                                     <div class="invalid-feedback">Nama wajib diisi.</div>
                                 </div>
-                                <div class="form-group has-feedback">
-                                    <label>Jenis Kelamin</label>
-                                    <input type="radio" name="gender" id="pria" value="Pria" checked>
-                                    <label for="pria">Pria</label>&nbsp;
-                                    <input type="radio" name="gender" id="perempuan" value="Wanita">
-                                    <label for="wanita">Wanita</label>
-                                </div>
+                                
                                 <div class="form-group has-feedback">
                                     <label for="alamat">Alamat</label>
                                     <span class="fa fa-home form-control-feedback"></span>
@@ -67,10 +61,19 @@ form_open('register/input');
                                     </div>
                                     <div class="invalid-feedback">Password wajib diisi.</div>
                                 </div>
-                                <div class="form-group float-right">
-                                    <button type="submit" class="btn btn-primary btn-lg" id="btnLogin">Register</button>
+                                <div class="form-group has-feedback">
+                                    <label for="role">Role</label>
+                                    <span class="fa fa-users form-control-feedback" style="line-height:40px;"></span>
+                                    <select class="form-control" name="role" id="role">
+                                        <?php foreach($level as $lvl): ?>
+                                            <option value="<?= $lvl ?>"selected><?= $lvl ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
-                                <p>Sudah punya akun? <a id="link-register-password" href="<?php echo base_url();?>login">login</a></p>
+                                <div class="form-group float-right">
+                                    <a class="btn btn-outline-dark btn-lg" href="<?php echo base_url();?>admin/user">Kembali</a>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="btnLogin">Tambah</button>
+                                </div>
                             </form>
                         </div>
                         <!-- /card-block -->

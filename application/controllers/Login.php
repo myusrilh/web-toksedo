@@ -30,6 +30,7 @@ class login extends CI_Controller {
             foreach ($ceklogin as $row);
             
             $sessdata= array(
+                'idUser'=>$row->idUser,
                 'nama' => $row->nama,
                 'alamat' => $row->alamat,
                 'pekerjaan' => $row->pekerjaan,

@@ -121,6 +121,11 @@
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+            if ($("#wrapper").hasClass("toggled") == false) {
+              $("#user-logo").css('color','black');
+            }else {
+              $("#user-logo").css('color','white');
+            }
         });
 
         $(window).resize(function(e) {

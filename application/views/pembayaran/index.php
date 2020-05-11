@@ -6,33 +6,21 @@
     </div>
     
     <div class="row mt-5">
+        <?php foreach($pembayaran as $byr): ?>
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    Transfer(ATM/M-Banking)
+                    <?= $byr['namaPembayaran']; ?>
                 </div>
-                <img class="mx-auto card-img-top" src="<?php echo base_url();?>images/debit.png" style="width:250px" alt="online">
+                <img class="mx-auto card-img-top" src="<?php echo base_url();?>images/<?= $byr['namaGambar'];?>.png" style="width:150px" alt="online">
                 <div class="card-body">
-                    <h5 class="card-title">Online</h5>
-                    <p class="card-text">Dibayar secara debit/transfer</p>
+                    <h5 class="card-title"><?= $byr['jenisPembayaran']; ?></h5>
+                    <p class="card-text"><?= $byr['detailPembayaran']; ?></p>
                     <a href="#" class="btn btn-primary float-right">Beli</a>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    Cash-On-Delivery(COD)
-                </div>
-                <img class="mx-auto card-img-top" src="<?php echo base_url();?>images/cash.png" style="width:250px" alt="metode_pembayaran">
-                <div class="card-body">
-                    <h5 class="card-title">Offline</h5>
-                    <p class="card-text">Tunai & Tatap Muka</p>
-                    <a href="#" class="btn btn-primary float-right">Beli</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <br>

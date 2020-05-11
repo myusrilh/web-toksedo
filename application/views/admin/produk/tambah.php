@@ -1,53 +1,72 @@
-<div class="container">
-    <div class="row mt-3">
-        <div class="col-md-6">
-            <!-- http://getbootstrap.com/docs/4.1/components/card/ -->
-            <div class="card">
-                <div class="card-header">
-                Form Tambah Data Produk
-                </div>
-                <div class="card-body">
-                <!-- praktikum 2 bagian 2 nomor 7f -->
-                <?php if (validation_errors()): ?>
-                <!-- praktikum 2 bagian 2 nomor 7h -->
-                <div class="alert alert-danger" role="alert">
-                    <?= validation_errors(); ?>
-                </div>
-                <?php endif ?>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="gambar">Gambar</label>
-                            <!-- Praktikum 2 bagian 2 nomor 7d -->
-                            <input type="file" class="form-control" id="gambar" name="gambar">
+<?php
+form_open('admin/tambahuser');
+?>
+<div class="container py-1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row my-5">
+                <div class="col-md-6 py-1 mx-auto">                    
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Tambah Data Produk</h3>
                         </div>
-                        <div class="form-group">
-                            <label for="nama">Nama Produk</label>
-                            <!-- Praktikum 2 bagian 2 nomor 7d -->
-                            <input type="text" class="form-control" id="nama" name="nama">
+                        <div class="card-body">
+                            <!-- Muncul alert -->
+                            <?php if (validation_errors()): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?= validation_errors(); ?>
+                            </div>
+                            <?php endif;?>
+                            <form class="form" role="form" autocomplete="off" id="formLogin" method="POST">
+                                <div class="form-group has-feedback">
+                                    <label for="nama">Nama Barang</label>
+                                    <span class="fa fa-database form-control-feedback"></span>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="nama" id="nama" placeholder="Nama Barang">
+                                    <div class="invalid-feedback">Nama Barang wajib diisi.</div>
+                                </div>
+
+                                <div class="form-group has-feedback">
+                                    <label for="harga">Harga Barang</label>
+                                    <span class="fa fa-tags form-control-feedback"></span>
+                                    <input type="number" class="form-control form-control-lg rounded-0" name="harga" id="harga" placeholder="Harga Barang">
+                                    <div class="invalid-feedback">Harga Barang wajib diisi.</div>
+                                </div>                                
+                                <div class="form-group has-feedback">
+                                    <label for="detail">Detail</label>
+                                    <span class="fa fa-pencil-square-o form-control-feedback"></span>
+                                    <textarea class="form-control form-control-lg rounded-0" name="detail" id="detail" rows="3" placeholder="Detail Barang"></textarea>
+                                    <div class="invalid-feedback">Detail wajib diisi.</div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="role">Kategori</label>
+                                    <span class="fa fa-info-circle form-control-feedback" style="line-height:40px;"></span>
+                                    <select class="form-control" name="kategori" id="kategori">
+                                        <?php foreach($tblktgr as $kategori): ?>
+                                            <option value="<?= $kategori['idKategori']; ?>"selected><?= $kategori['namaKategori']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group float-right">
+                                    <a class="btn btn-outline-dark btn-lg" href="<?php echo base_url();?>admin/produk">Kembali</a>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="btnLogin">Tambah</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="harga">Harga</label>
-                            <!-- Praktikum 2 bagian 2 nomor 7d -->
-                            <input type="number" class="form-control" id="harga" name="harga">
-                        </div>
-                        <div class="form-group">
-                            <label for="detail">Detail</label>
-                            <!-- Praktikum 2 bagian 2 nomor 7d -->
-                            <textarea class="form-control" name="detail" id="detail" cols="50" rows="4"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="jurusan">Kategori</label>
-                            <select class="form-control" name="kategori" id="kategori">
-                                <!-- Praktikum 4 bagian 1 nomor 7f -->
-                                <?php foreach($jurusan as $key) : ?>
-                                    <option value="<?= $key ?>"selected><?= $key ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-primary float-right"> Submit </button>    
-                    </form>
+                        <!-- /card-block -->
+                    </div>
+                    <!-- /form card login -->
                 </div>
             </div>
+            <!-- /row -->
         </div>
+        <!-- /col -->
     </div>
+    <!-- /row -->
 </div>
+<!-- /container -->
+<?php
+
+form_close();
+
+?>
