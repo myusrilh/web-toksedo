@@ -85,7 +85,7 @@ class admin extends CI_Controller {
             $this->load->view('admin/template/sidebar_admin');
         }
         $this->load->view('admin/produk/edit');
-        $this->load->view('admin/template/footer_admin');
+        $this->load->view('admin/template/footer_admin',$data);
         } else {
             # code...
             $this->produk_model->ubahDataProduk($id);
@@ -162,7 +162,7 @@ class admin extends CI_Controller {
             $this->load->view('admin/template/sidebar_admin');
         }
         $this->load->view('admin/user/edit');
-        $this->load->view('admin/template/footer_admin');
+        $this->load->view('admin/template/footer_admin',$data);
         } else {
             # code...
             $this->login_model->ubahDataUser();

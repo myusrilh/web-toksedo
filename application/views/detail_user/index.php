@@ -16,6 +16,7 @@
                     <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('level'); ?></p> </a></li>
                     <?php endif;?>
                     <li class="text-center"><a class="btn btn-outline-success" href="<?php echo base_url();?>edit_profile/edit/<?= $this->session->userdata('idUser'); ?>">Edit Profile</a></li>
+                    <li class="text-center"><a class="btn btn-outline-dark mt-3" href="<?php echo base_url();?>transaksi/tampilRiwayatTransaksi/<?= $this->session->userdata('idUser'); ?>">Riwayat Transaksi</a></li>
                 </ul>
             </div> <!-- /#sidebar-wrapper -->
             

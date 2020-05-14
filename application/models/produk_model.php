@@ -28,26 +28,25 @@ class produk_model extends CI_Model {
     }
 
     public function getProdukByID($id){
-        $this->db->select('idProduk,produk.idKategori, namaKategori,nama,harga,detail');
+        $this->db->select('idProduk, produk.idKategori as idKategori, namaKategori,produk.nama as nama,harga,detail');
         $this->db->from('produk');
-        $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
         $this->db->where('idProduk', $id);
+        $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
+        $this->db->limit(1);
+        
         $query = $this->db->get();
         return $query->result_array();
     }
 
-    // public function getIDKategori(){
-    //     $this->db->select('idKategori');
-    //     $this->db->from('kategori');
-    //     return $this->db->get();
-    // }
-
-    public function getAllPembayaran(){
-        $query = $this->db->get('pembayaran');
-        return $query->result_array();
+    public function getIDKategori(){
+        $this->db->select('idKategori');
+        $this->db->from('kategori');
+        return $this->db->get();
     }
 
+
     public function getKategori(){
+
         return $this->db->get('kategori')->result_array();
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 11, 2020 at 09:42 AM
+-- Generation Time: May 14, 2020 at 03:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -89,6 +89,28 @@ INSERT INTO `produk` (`idProduk`, `idKategori`, `nama`, `harga`, `detail`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `idTransaksi` int(11) NOT NULL,
+  `idProduk` int(11) DEFAULT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  `idUser` int(11) DEFAULT NULL,
+  `idPembayaran` int(11) DEFAULT NULL,
+  `totalBelanja` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`idTransaksi`, `idProduk`, `jumlah`, `idUser`, `idPembayaran`, `totalBelanja`) VALUES
+(1, 2, 3, 1, 1, 435000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -137,6 +159,15 @@ ALTER TABLE `produk`
   ADD KEY `fk_produk_idKategori` (`idKategori`);
 
 --
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`idTransaksi`),
+  ADD KEY `fk_transaksi_idproduk` (`idProduk`),
+  ADD KEY `fk_transaksi_idpembayaran` (`idPembayaran`),
+  ADD KEY `fk_transaksi_iduser` (`idUser`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -165,6 +196,12 @@ ALTER TABLE `produk`
   MODIFY `idProduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
@@ -179,6 +216,14 @@ ALTER TABLE `user`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `fk_produk_idKategori` FOREIGN KEY (`idKategori`) REFERENCES `kategori` (`idKategori`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `fk_transaksi_idpembayaran` FOREIGN KEY (`idPembayaran`) REFERENCES `pembayaran` (`idPembayaran`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_transaksi_idproduk` FOREIGN KEY (`idProduk`) REFERENCES `produk` (`idProduk`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_transaksi_iduser` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

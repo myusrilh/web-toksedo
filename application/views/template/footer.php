@@ -137,6 +137,19 @@
         });
       });
     </script>
+    <!-- Perkalian value input detail produk -->
+    <?php if($this->input->post('jumlah') != null && $this->input->post('harga') != null): ?>
+      <script>
+      $output = $('#totalBelanja');
+      $(document).ready(function{
+        $('#totalBelanja').keyup(function() {
+          var $total = (int) $('#harga').val();
+          var $value = (int) $('#jumlah').val();
+          $output.val($value * $total);
+        });
+      });
+    </script>
+    <?php endif; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>

@@ -36,7 +36,7 @@
                             <label for="kategori">Kategori</label>
                             <select class="form-control" name="kategori" id="kategori">
                                 <?php foreach($kategori as $ktg) : ?>
-                                <option id="plh-ktg" value="<?= $ktg['idKategori'] ?>"selected><?= $ktg['namaKategori'];?></option>
+                                <option class="pilih-kategori" value="<?= $ktg['idKategori'] ?>"selected><?= $ktg['namaKategori'];?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
