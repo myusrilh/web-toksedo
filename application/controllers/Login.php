@@ -24,13 +24,14 @@ class login extends CI_Controller {
         $password = htmlspecialchars($this->input->post('password'));
 
         $ceklogin = $this->login_model->login($username,$password);
-        
+
         if ($ceklogin) {
             # code...
             foreach ($ceklogin as $row);
             
             $sessdata= array(
                 'idUser'=>$row->idUser,
+                'gambarProfil'=>$row->gambarProfil,
                 'nama' => $row->nama,
                 'alamat' => $row->alamat,
                 'pekerjaan' => $row->pekerjaan,

@@ -58,7 +58,11 @@
                 <?php foreach($produk as $prd):?>
                 <div class="card border-success" style="width:200px;">
                     <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
+                    <?php if($prd['gambarProduk'] != null): ?>
+                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/produk/<?= $prd['gambarProduk'];?>" alt="<?= $prd['gambarProduk'];?>">
+                    <?php else: ?>
+                        <img class="card-img-top mt-3" style="width:165px;height:110px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Foto Sample Produk">
+                    <?php endif;?>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"><?= $prd['nama'];?></h4>
@@ -83,7 +87,11 @@
                 <?php foreach($produk as $prd):?>
                 <div class="card border-success" style="width:285px;">
                     <div class="text-center">
-                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
+                    <?php if($prd['gambarProduk'] != null): ?>
+                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/produk/<?= $prd['gambarProduk'];?>" alt="<?= $prd['gambarProduk'];?>">
+                    <?php else: ?>
+                        <img class="card-img-top mt-3" style="width:235px;height:160px;" src="<?php echo base_url();?>images/foto-produk.png" alt="Foto Sample Produk">
+                    <?php endif;?>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"><?= $prd['nama'];?></h4>

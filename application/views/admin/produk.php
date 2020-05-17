@@ -32,6 +32,7 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
+                    <th scope="col">Gambar</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Detail</th>
@@ -47,6 +48,11 @@
                 <tbody>
                     <tr>
                         <td> <?php echo $no; ?> </td>
+                        <?php if($prd['gambarProduk'] !=null): ?>
+                            <td><img style="width:165px;" src="<?= base_url();?>images/produk/<?= $prd['gambarProduk']; ?>" alt="<?= $prd['gambarProduk']; ?>"></td>
+                        <?php else: ?>
+                            <td><img style="width:165px;" src="<?= base_url();?>images/produk/foto-produk.png" alt="<?= $prd['gambarProduk']; ?>"></td>
+                        <?php endif;?>
                         <td><?= $prd['nama']; ?></td>
                         <td><?= $prd['harga']; ?></td>
                         <td><?= $prd['detail']; ?></td>

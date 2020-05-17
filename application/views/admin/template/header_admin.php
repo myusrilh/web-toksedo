@@ -182,7 +182,10 @@
                   <a class="nav-link" href="<?php echo base_url();?>admin/user">User</a>
                 </li>
                 <li id="testimoni" class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>admin/index">Testimoni</a>
+                  <a class="nav-link" href="<?php echo base_url();?>admin/testimoni">Testimoni</a>
+                </li>
+                <li id="transaksi" class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>admin/transaksi">Transaksi</a>
                 </li>
 
                 <!-- <li class="nav-item dropdown">

@@ -6,7 +6,8 @@
                 <h4>Riwayat Transaksi (<?= $this->session->userdata('nama') ?>) : </h4>
                 <hr>
                     <?php foreach($transaksi as $trans): ?>
-                    <h5>Riwayat <?= $trans['idTransaksi']?></h5>
+                    <h5>Riwayat : </h5><p>(<?= $trans['timestamp']?>)</p>
+                    <?php if($trans['namaBarang'] != null): ?>
                     <table style="box-shadow: -5px 5px 10px rgba(0,0,0, 0.4)" class="table table-striped mt-4 mb-4">
                         <tr>
                             <th>No</th>
@@ -50,6 +51,11 @@
                         </tr>
                     </table>
                     <hr>
+                    <?php else: ?>
+                        <div class="mx-auto py-5">
+                            <h2>Silahkan melakukan transaksi dahulu</h2>
+                        </div>
+                    <?php endif; ?>
                     <?php endforeach;?>
                     <a href="<?= base_url(); ?>" style="box-shadow: -5px 5px 10px rgba(0,0,0, 0.4)" class="btn btn-danger float-right"><i class="fa fa-home"></i> Home</a>
                 </div>

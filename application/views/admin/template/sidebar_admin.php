@@ -8,6 +8,11 @@
                         0 41.8px 33.4px rgba(0, 0, 0, 0.086),
                         0 100px 80px rgba(0, 0, 0, 0.12)">
                 <ul class="sidebar-nav">
+                    <?php if($this->session->userdata('gambarProfil') != null): ?>
+                    <li class="pt-3 text-center"><a id="list-profile" href="#"><img style="width:75px;" src="<?= base_url();?>images/profile/<?php echo $this->session->userdata('gambarProfil'); ?>" alt=""></li>
+                    <?php else :  ?>
+                    <li class="pt-3 text-center"><a id="list-profile" href="#"><img style="width:75px;" src="<?= base_url();?>images/profile/sample-profil.png" alt="sample-profil.png"></li>
+                    <?php endif;?>
                     <li class="pt-3 text-center"><a id="list-profile" href="#"> <h5><i class="fa fa-user"></i> Nama Lengkap</h5> </a></li>
                     <li class="text-center"><a id="list-profile" href="#"> <p><?php echo $this->session->userdata('nama'); ?></p> </a></li>
                     <hr>

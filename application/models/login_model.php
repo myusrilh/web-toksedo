@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class login_model extends CI_Model {
 
     public function login($username,$password){
-        $this->db->select('idUser,nama,alamat,pekerjaan,username,password,level');
+        $this->db->select('idUser,gambarProfil,nama,alamat,pekerjaan,username,password,level');
         $this->db->from('user');
         $this->db->where('username', $username);
         $this->db->where('password', $password);
@@ -22,8 +22,16 @@ class login_model extends CI_Model {
         
     }
 
-    public function registrasi(){
+    public function getGambarProfil($id){
+        $this->db->select('gambarProfil');
+        $this->db->from('user');
+        $this->db->where('idUser', $id);
+        return $this->db->get()->result_array();
+    }
+
+    public function registrasi($namaFile){
         $data = [
+            "gambarProfil" => $namaFile,
             "nama" => $this->input->post('nama'),
             "gender" => $this->input->post('gender'),
             "alamat" => $this->input->post('alamat'),
@@ -45,7 +53,6 @@ class login_model extends CI_Model {
             "username" => $this->input->post('username'),
             "password" => $this->input->post('password'),
             "level" => $this->input->post('role')
-            
         ];
         $this->db->insert('user', $data);
         
@@ -65,8 +72,25 @@ class login_model extends CI_Model {
         $this->db->update('user', $data);
         
     }
-    public function editProfile($level){
+    public function editProfile($id,$level,$namaFile){
+        $this->db->select('gambarProfil');
+        $this->db->from('user');
+        $this->db->where('idUser', $id);
+        $gambar = $this->db->get()->result_array();
+        
+        foreach($gambar as $gbr);
+        if ($gbr['gambarProfil'] != null) {
+            # code...
+            if ($namaFile == null) {
+                # code...
+                $namaFile = $gbr['gambarProfil'];
+            }
+        }else if($gbr['gambarProfil'] == null && $namaFile == null){
+            $namaFile = null;
+        }
+
         $data = [
+            "gambarProfil" => $namaFile,
             "nama" => $this->input->post('nama'),
             "gender" => $this->input->post('gender'),
             "alamat" => $this->input->post('alamat'),
@@ -79,7 +103,7 @@ class login_model extends CI_Model {
         $this->db->where('idUser', $this->input->post('idUser'));
         $this->db->update('user', $data);
         
-        $this->db->select('idUser,nama,alamat,pekerjaan,username,password,level');
+        $this->db->select('idUser,gambarProfil,nama,alamat,pekerjaan,username,password,level');
         $this->db->from('user');
         $this->db->where('idUser', $this->input->post('idUser'));
         $query = $this->db->get();

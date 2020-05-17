@@ -12,11 +12,16 @@ class produk_model extends CI_Model {
         $query = $this->db->get('produk');
         return $query->result_array();
     }
-
+    public function getGambarProduk($id){
+        $this->db->select('gambarProduk');
+        $this->db->from('produk');
+        $this->db->where('idProduk', $id);
+        return $this->db->get()->result_array();
+    }
     
     public function getAllProdukAdmin()
     {
-        $this->db->select('idProduk,produk.idKategori as idk,namaKategori,nama,harga,detail');
+        $this->db->select('idProduk,gambarProduk,produk.idKategori as idk,namaKategori,nama,harga,detail');
         $this->db->from('produk');
         $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
         $query = $this->db->get();
@@ -28,7 +33,7 @@ class produk_model extends CI_Model {
     }
 
     public function getProdukByID($id){
-        $this->db->select('idProduk, produk.idKategori as idKategori, namaKategori,produk.nama as nama,harga,detail');
+        $this->db->select('idProduk,gambarProduk, produk.idKategori as idKategori, namaKategori,produk.nama as nama,harga,detail');
         $this->db->from('produk');
         $this->db->where('idProduk', $id);
         $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
@@ -50,23 +55,41 @@ class produk_model extends CI_Model {
         return $this->db->get('kategori')->result_array();
     }
 
-    public function tambahDataProduk(){
+    public function tambahDataProduk($namaFile){
         $data = [
             'idKategori' => $this->input->post('kategori'),
+            'gambarProduk' => $namaFile,
             'nama' => $this->input->post('nama'),
             'harga' => $this->input->post('harga'),
             'detail' => $this->input->post('detail')
         ];
         $this->db->insert('produk', $data);
     }
-    public function ubahDataProduk($id){
+    public function ubahDataProduk($id, $namaFile){
+        $this->db->select('gambarProduk');
+        $this->db->from('produk');
+        $this->db->where('idProduk', $id);
+        $gambar = $this->db->get()->result_array();
+        
+        foreach($gambar as $gbr);
+        if ($gbr['gambarProduk'] != null) {
+            # code...
+            if ($namaFile == null) {
+                # code...
+                $namaFile = $gbr['gambarProduk'];
+            }
+        }else if($gbr['gambarProduk'] == null && $namaFile == null){
+            $namaFile = null;
+        }
+
         $data = [
-            "nama" => $this->input->post('nama'),
-            "harga" => $this->input->post('harga'),
-            "detail" => $this->input->post('detail'),
-            "idKategori" => $this->input->post('kategori')
+            'idKategori' => $this->input->post('kategori'),
+            'gambarProduk' => $namaFile,
+            'nama' => $this->input->post('nama'),
+            'harga' => $this->input->post('harga'),
+            'detail' => $this->input->post('detail')
         ];
-        $this->db->set($data);
+        // $this->db->set($data);
         //$this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
         //$this->db->where('kategori.idKategori', $this->input->post('kategori'));
         $this->db->where('idProduk',$id);

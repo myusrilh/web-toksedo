@@ -22,7 +22,27 @@ class register extends CI_Controller {
             $this->load->view('template/footer');
         } else {
             # code...
-            $this->login_model->registrasi();
+            $config['upload_path'] = FCPATH . 'images/profile/';
+            if(is_file($config['upload_path']))
+            {
+                chmod($config['upload_path'], 777); ## this should change the permissions
+            }
+            
+            $config['allowed_types'] = 'jpg|png|jpeg'; //Images extensions accepted
+            $config['max_size']    = '5120';
+            $config['max_width'] = 11024;
+            $config['max_height'] = 7168;
+            $config['overwrite'] = TRUE; 
+            $this->load->library('upload',$config); //Load the upload CI library
+            
+            if (!$this->upload->do_upload('gambar'))
+            {
+                $namaFile = null;
+            }else{
+                $file_info = $this->upload->data();
+                $namaFile = $file_info['file_name'];
+            }
+            $this->login_model->registrasi($namaFile);
             $this->session->set_flashdata('flash-data', 'ditambahkan');
             redirect('login','refresh');
         }

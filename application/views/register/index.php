@@ -1,6 +1,3 @@
-<?php
-form_open('register/input');
-?>
 <div class="container py-1">
     <div class="row">
         <div class="col-md-12">
@@ -18,7 +15,22 @@ form_open('register/input');
                                 <?= validation_errors(); ?>
                             </div>
                             <?php endif;?>
-                            <form class="form" role="form" autocomplete="off" id="formLogin" method="POST">
+                            <?php if(isset($uploadError)): ?>
+                                <?php foreach ($uploadError as $error): ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <p>Anda harus upload foto!</p>
+                                    </div>
+                                <?php endforeach;?>
+                            <?php endif; ?>
+                                <?=
+                                form_open_multipart('register/index');
+                                ?>
+                                <div class="form-group has-feedback">
+                                    <label for="gambar"><b>Gambar Profil</b></label><br>
+                                    <img class="mb-1" style="width: 100px;" src="<?= base_url();?>images/profile/sample-profil.png" alt="sample-profil.png">
+                                    <input type="file" class="input" name="gambar" id="gambar">
+                                    <div class="invalid-feedback">Gambar wajib diupload</div>
+                                </div>
                                 <div class="form-group has-feedback">
                                     <label for="nama">Nama Lengkap</label>
                                     <span class="fa fa-user form-control-feedback"></span>
@@ -71,7 +83,9 @@ form_open('register/input');
                                     <button type="submit" class="btn btn-primary btn-lg" id="btnLogin">Register</button>
                                 </div>
                                 <p>Sudah punya akun? <a id="link-register-password" href="<?php echo base_url();?>login">login</a></p>
-                            </form>
+                                <?=
+                                form_close();
+                                ?>
                         </div>
                         <!-- /card-block -->
                     </div>
@@ -85,8 +99,3 @@ form_open('register/input');
     <!-- /row -->
 </div>
 <!-- /container -->
-<?php
-
-form_close();
-
-?>

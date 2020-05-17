@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 14, 2020 at 03:14 AM
+-- Generation Time: May 17, 2020 at 08:34 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `toksedo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `idChat` int(11) NOT NULL,
+  `idUser` int(11) DEFAULT NULL,
+  `guid` int(11) DEFAULT NULL,
+  `pesan` text DEFAULT NULL,
+  `timestamp` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -71,6 +85,7 @@ INSERT INTO `pembayaran` (`idPembayaran`, `namaGambar`, `namaPembayaran`, `jenis
 CREATE TABLE `produk` (
   `idProduk` int(11) NOT NULL,
   `idKategori` int(11) DEFAULT NULL,
+  `gambarProduk` varchar(150) DEFAULT NULL,
   `nama` varchar(50) DEFAULT NULL,
   `harga` int(11) DEFAULT NULL,
   `detail` varchar(1000) DEFAULT NULL
@@ -80,11 +95,34 @@ CREATE TABLE `produk` (
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`idProduk`, `idKategori`, `nama`, `harga`, `detail`) VALUES
-(1, 1, 'Urea (Petrokimia)', 150000, 'SNI : 02-2801-1998\r\n\r\nSpesifikasi\r\n\r\nKadar air maksimal 0,50%\r\nKadar Biuret maksimal 1%\r\nKadar Nitrogen minimal 46%\r\nBentuk butiran tidak berdebu\r\nWarna putih (non subsidi)\r\nWarna pink untuk Urea Bersubsidi\r\nDikemas dalam kantong dengan isi 50 kg'),
-(2, 2, 'Hormonik Kemasan 500cc (Nasa)', 145000, 'Hormonik dirancang untuk membantu memacu pertumbuhan, pengumbian, pembungaan dan pembuahan tanaman agar didapatkan hasil panen yang optimal. Produk multiguna ini mengandung Zat Pengatur Tumbuh (ZPT) Organik terutama Auksin, Giberelin dan Sitokinin, dan di formulasikan hanya dari bahan alami yang dibutuhkan oleh semua jenis tanaman sehingga tidak membahayakan ( aman ) bagi kesehatan manusia maupun binatang.'),
-(3, 1, 'Kapur Pertanian Kebomas', 140000, 'Spesifikasi\r\n\r\nKadar CaCO3 : 85%, \r\nIjin Edar : Surat Deptan No. 32/pupuk/PPI/2/2007, \r\nBentuk tepung halus, \r\nWarna putih, \r\nDikemas dalam kantong bercap Kerbau Emas dengan isi 50 kg'),
-(4, 2, 'Viterna Plus (Nasa)', 50000, 'Vitamin Ternak Organik merupakan suplemen pakan ternak dari PT Natural Nusantara. Produk vitamin ternak alami ini diolah dari bermacam-macam bahan alami dari hewan serta tumbuhan) yang berguna sebagai penyedia zat-zat yang diperlukan hewan ternak yang memenuhi Aspek K3 (Kuantitas, Kualitas dan Kelestarian). VITERNA Plus merupakan produk alami sehingga aman untuk kesehatan dan kelestarian lingkungan.');
+INSERT INTO `produk` (`idProduk`, `idKategori`, `gambarProduk`, `nama`, `harga`, `detail`) VALUES
+(1, 2, 'pg_subnonsub_urea.png', 'Urea (Petrokimia)', 150000, 'SNI : 02-2801-1998\r\n\r\nSpesifikasi\r\n\r\nKadar air maksimal 0,50%\r\nKadar Biuret maksimal 1%\r\nKadar Nitrogen minimal 46%\r\nBentuk butiran tidak berdebu\r\nWarna putih (non subsidi)\r\nWarna pink untuk Urea Bersubsidi\r\nDikemas dalam kantong dengan isi 50 kg'),
+(2, 2, 'hormonik-besar.jpg', 'Hormonik Kemasan 500cc (Nasa)', 145000, 'Hormonik dirancang untuk membantu memacu pertumbuhan, pengumbian, pembungaan dan pembuahan tanaman agar didapatkan hasil panen yang optimal. Produk multiguna ini mengandung Zat Pengatur Tumbuh (ZPT) Organik terutama Auksin, Giberelin dan Sitokinin, dan di formulasikan hanya dari bahan alami yang dibutuhkan oleh semua jenis tanaman sehingga tidak membahayakan ( aman ) bagi kesehatan manusia maupun binatang.'),
+(3, 1, 'Kapur-Pertanian-update-transparant.png', 'Kapur Pertanian Kebomas', 140000, 'Spesifikasi\r\n\r\nKadar CaCO3 : 85%, \r\nIjin Edar : Surat Deptan No. 32/pupuk/PPI/2/2007, \r\nBentuk tepung halus, \r\nWarna putih, \r\nDikemas dalam kantong bercap Kerbau Emas dengan isi 50 kg'),
+(4, 2, 'viterna-plus-nasa-300x300.jpg', 'Viterna Plus (Nasa)', 50000, 'Vitamin Ternak Organik merupakan suplemen pakan ternak dari PT Natural Nusantara. Produk vitamin ternak alami ini diolah dari bermacam-macam bahan alami dari hewan serta tumbuhan) yang berguna sebagai penyedia zat-zat yang diperlukan hewan ternak yang memenuhi Aspek K3 (Kuantitas, Kualitas dan Kelestarian). VITERNA Plus merupakan produk alami sehingga aman untuk kesehatan dan kelestarian lingkungan.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimoni`
+--
+
+CREATE TABLE `testimoni` (
+  `idTestimoni` int(11) NOT NULL,
+  `namaGambar` varchar(255) DEFAULT NULL,
+  `judulGambar` varchar(100) DEFAULT NULL,
+  `detailGambar` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `testimoni`
+--
+
+INSERT INTO `testimoni` (`idTestimoni`, `namaGambar`, `judulGambar`, `detailGambar`, `created_at`, `updated_at`) VALUES
+(2, 'delete_project_unity.png', 'Foto Testimoni #1', 'Hasil diskusi customer dan konsultan', '2020-05-16 02:27:00', '2020-05-17 18:11:30'),
+(3, 'latex.png', 'Foto Testimoni #2', 'Hasil diskusi antara konsultan dengan customer via chat website', '2020-05-16 13:47:27', '2020-05-17 18:12:32');
 
 -- --------------------------------------------------------
 
@@ -98,15 +136,17 @@ CREATE TABLE `transaksi` (
   `jumlah` int(11) DEFAULT NULL,
   `idUser` int(11) DEFAULT NULL,
   `idPembayaran` int(11) DEFAULT NULL,
-  `totalBelanja` int(11) DEFAULT NULL
+  `totalBelanja` int(11) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`idTransaksi`, `idProduk`, `jumlah`, `idUser`, `idPembayaran`, `totalBelanja`) VALUES
-(1, 2, 3, 1, 1, 435000);
+INSERT INTO `transaksi` (`idTransaksi`, `idProduk`, `jumlah`, `idUser`, `idPembayaran`, `totalBelanja`, `timestamp`) VALUES
+(1, 2, 3, 1, 1, 435000, '2020-05-16 16:14:44'),
+(2, 3, 4, 1, 2, 560000, '2020-05-16 16:14:44');
 
 -- --------------------------------------------------------
 
@@ -116,6 +156,7 @@ INSERT INTO `transaksi` (`idTransaksi`, `idProduk`, `jumlah`, `idUser`, `idPemba
 
 CREATE TABLE `user` (
   `idUser` int(30) NOT NULL,
+  `gambarProfil` varchar(100) DEFAULT NULL,
   `nama` varchar(50) NOT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
@@ -129,15 +170,23 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`idUser`, `nama`, `gender`, `alamat`, `pekerjaan`, `username`, `password`, `level`) VALUES
-(1, 'Joko Suprapto', 'Pria', 'Jalan Timun Mas No. 20 Desa Brudu', 'Petani', 'jokos', '1234', 'customer'),
-(2, 'Ainun Ma\'ruf', 'Wanita', '', 'Admin IT', 'ainun', 'admin', 'admin'),
-(3, 'Dani Sekoci', 'Pria', 'Jalan Ambarawa no. 10 Kota Galaktikos', 'Konsultan Ternak', 'daniseko', '1234', 'konsultan'),
-(4, 'Yusril Hasriansyah', 'Pria', 'Jalan Brawijaya No. 23 Kampung Froyo', 'Peternak', 'yusril', 'yusril12345', 'customer');
+INSERT INTO `user` (`idUser`, `gambarProfil`, `nama`, `gender`, `alamat`, `pekerjaan`, `username`, `password`, `level`) VALUES
+(1, 'tolak-omnibus.png', 'Joko Suprapto', 'Pria', 'Jalan Timun Mas No. 20 Desa Brudu', 'Petani', 'jokos', '1234', 'customer'),
+(2, 'polinema_joss.png', 'Ainun Farihah', 'Wanita', 'Jalan Belati Pamungkas No.45', 'Admin IT', 'ainun', 'admin', 'admin'),
+(3, NULL, 'Dani Sekoci', 'Pria', 'Jalan Ambarawa no. 10 Kota Galaktikos', 'Konsultan Ternak', 'daniseko', '1234', 'konsultan'),
+(4, NULL, 'Yusril Hasriansyah', 'Pria', 'Jalan Brawijaya No. 23 Kampung Froyo', 'Peternak', 'yusril', 'yusril12345', 'customer'),
+(7, NULL, 'Garry Salute', 'Pria', 'Jalan Peradaban Hilih No.303', 'Peternak', 'garry', '1234', 'customer');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`idChat`),
+  ADD KEY `fk_chat_idUser` (`idUser`);
 
 --
 -- Indexes for table `kategori`
@@ -159,6 +208,12 @@ ALTER TABLE `produk`
   ADD KEY `fk_produk_idKategori` (`idKategori`);
 
 --
+-- Indexes for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  ADD PRIMARY KEY (`idTestimoni`);
+
+--
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
@@ -176,6 +231,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `idChat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -196,20 +257,32 @@ ALTER TABLE `produk`
   MODIFY `idProduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `testimoni`
+--
+ALTER TABLE `testimoni`
+  MODIFY `idTestimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUser` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `chat`
+--
+ALTER TABLE `chat`
+  ADD CONSTRAINT `fk_chat_idUser` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `produk`

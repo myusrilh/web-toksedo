@@ -1,75 +1,27 @@
 <div class="container">
     <!-- baris_1 -->
     <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-    </div>
-    <!-- baris_1 -->
-
-    <!-- baris_2 -->
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-    </div>
-    <!-- baris_2 -->
-
-    <!-- baris_3 -->
-    <div class="row mt-5 mb-5">
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/wwz.jpg" alt="nama_produk">
-            </div>
-        </div>
-    </div>
-    <!-- baris_3 -->
-
+                <div class="card-deck">
+                <?php foreach($testimoni as $testi): ?>
+                    <div class="card mr-3" style="width:300px;">
+                        <div class="card-header mx-auto" style="height:300px;">
+                            <?php if($testi['namaGambar'] != null): ?>
+                                <img class="pt-3 card-img-top text-center" style="width:250px" src="<?php echo base_url();?>images/testimoni/<?= $testi['namaGambar'] ?>" alt="<?= $testi['namaGambar'] ?>">
+                            <?php else: ?>
+                                <img class="pt-3 card-img-top text-center" style="width:250px" src="<?php echo base_url();?>images/testimoni/tes-foto-testimoni.png" alt="tes-foto-testimoni.png">
+                            <?php endif; ?>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="text-center"><?= $testi['judulGambar'];?></h4><br>
+                            <hr>
+                            <h5>Detail : </h5>
+                            <p><?= $testi['detailGambar'];?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
         <!-- pagination -->
-        <nav aria-label="Page navigation example">
+        <!-- <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -81,7 +33,7 @@
                     <a class="page-link" href="#">Next</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 </div>
 <!-- container -->
 <br>

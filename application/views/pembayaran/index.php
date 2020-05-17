@@ -16,14 +16,14 @@
                 <div class="card-body">
                     <h5 class="card-title"><?= $byr['jenisPembayaran']; ?></h5>
                     <p class="card-text"><?= $byr['detailPembayaran']; ?></p>
-                    <label for="idProduk"><b> ID Produk</b></label>
-                    <input class="form-control" type="number" name="idProduk" id="idProduk" value="<?= $produk['idProduk'] ?>" readonly>
+                    <!-- <label for="idProduk"><b> ID Produk</b></label> -->
+                    <input class="form-control" type="hidden" name="idProduk" id="idProduk" value="<?= $produk['idProduk'] ?>" readonly>
                     <label for="harga"><b>Harga per item</b></label>
-                    <input class="form-control" type="number" name="harga" value="<?= $produk['harga'] ?>"readonly>
+                    <input class="form-control" type="number" name="harga" value="Rp. <?= $produk['harga'] ?>" readonly>
                     <label for="jumlah"><b>Jumlah yang dibeli</b></label>
-                    <input class="form-control" type="number" name="jumlah" value="<?= $produk['jumlah'] ?>"readonly>
+                    <input class="form-control" type="number" name="jumlah" value="<?= $produk['jumlah'] ?> item" readonly>
                     <label for="totalBelanja"><b>Total Biaya Belanja</b></label>
-                    <input class="form-control" type="number" name="totalBelanja" value="<?= $produk['totalBelanja'] ?>"readonly>
+                    <input class="form-control" type="number" name="totalBelanja" value="Rp. <?= $produk['totalBelanja'] ?>" readonly>
                     <div class="mt-3 float-right">
                         <button type="submit" id="tombolBeli" class="btn btn-primary"> Beli </button>
                     </div>

@@ -11,6 +11,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <!-- http://bootsnipp.com/snippets/4jXW -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/chat.css" />
+
     <style>
     body {
       overflow-x: hidden;
@@ -188,7 +191,7 @@
                 </li>
               <?php if($this->session->userdata('level')=="customer" || $this->session->userdata('level')=="konsultan" ):?>
                 <li id="chat" class="nav-item">
-                  <a class="nav-link" href="<?php echo base_url();?>">Chat</a>
+                  <a class="nav-link" href="#">Chat</a>
                 </li>
                 <?php endif;?>
 
