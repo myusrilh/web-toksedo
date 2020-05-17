@@ -58,7 +58,7 @@ class transaksi_model extends CI_Model {
         
 
         $q = $this->db->get();
-        return $q->row();
+        return $q->result_array();
                 
     }
 

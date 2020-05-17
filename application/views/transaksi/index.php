@@ -12,6 +12,7 @@
                 </div>
             <?php endif; ?>
                 <h4>Hasil Transaksi : </h4>
+                    <?php foreach($transaksi as $trans): ?>
                     <table style="box-shadow: -5px 5px 10px rgba(0,0,0, 0.4)" class="table table-striped mt-4 mb-4 py-5">
                     
                         <tr>
@@ -22,39 +23,40 @@
                         <tr>
                             <th>1</th>
                             <td>Nama Barang</td>
-                            <td><?= $transaksi->namaBarang; ?></td>
+                            <td><?= $trans['namaBarang']; ?></td>
                         </tr>
                         <tr>
                             <th>2</th>
                             <td>Harga Barang</td>
-                            <td>Rp. <?= $transaksi->hargaBarang; ?></td>
+                            <td>Rp. <?= $trans['hargaBarang']; ?></td>
                         </tr>
                         <tr>
                             <th>3</th>
                             <td>Jumlah Barang</td>
-                            <td><?= $transaksi->jumlah; ?></td>
+                            <td><?= $trans['jumlah']; ?></td>
                         </tr>
                         <tr>
                             <th>4</th>
                             <td>Kategori Barang</td>
-                            <td><?= $transaksi->namaKategori; ?></td>
+                            <td><?= $trans['namaKategori']; ?></td>
                         </tr>
                         <tr>
                             <th>5</th>
                             <td>Jenis Pembayaran</td>
-                            <td><?= $transaksi->jenisPembayaran; ?></td>
+                            <td><?= $trans['jenisPembayaran']; ?></td>
                         </tr>
                         <tr>
                             <th>6</th>
                             <td>Nama Pembeli</td>
-                            <td><?= $transaksi->namaUser; ?></td>
+                            <td><?= $trans['namaUser']; ?></td>
                         </tr>
                         <tr>
                             <th>7</th>
                             <td>Total Biaya Belanja</td>
-                            <td>Rp. <?= $transaksi->totalBelanja; ?></td>
+                            <td>Rp. <?= $trans['totalBelanja']; ?></td>
                         </tr>
                     </table>
+                    <?php endforeach; ?>
                     <a href="<?= base_url(); ?>" style="box-shadow: -5px 5px 10px rgba(0,0,0, 0.4)" class="btn btn-danger float-right"><i class="fa fa-home"></i> Home</a>
                 </div>
             </div>

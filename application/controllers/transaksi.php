@@ -12,7 +12,7 @@ class transaksi extends CI_Controller {
     public function index(){
         $data['title'] = "Transaksi";
         $idUser = $this->session->userdata('idUser');
-        $data['transaksi'] = $this->transaksi_model-> getTransaksiByID($idUser);
+        $data['transaksi'] = $this->transaksi_model->getTransaksiByID($idUser);
         $this->load->view('template/header',$data);
         if ($this->session->userdata('nama')!=null) {
             # code...

@@ -4,15 +4,18 @@ form_open('pembayaran/index');
 <div class="container">
     <div class="row mt-3 py-5">
         <div class="col-md-6 mx-auto">
-            <form class="form" role="form" autocomplete="off" id="formDetailProduk" method="POST">
-            <?php foreach($produk as $produk); ?>
+            <?php foreach($produk as $produk): ?>
             <div class="card">
                 <div class="card-header">
                     Detail Produk
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <img class="card-img-top mb-3 mt-2" style="" src="<?php echo base_url();?>images/foto-produk.png" alt="Card image">
+                    <?php if($produk['gambarProduk'] != null) :?>
+                        <img class="card-img-top mb-3 mt-2" src="<?php echo base_url();?>images/produk/<?= $produk['gambarProduk'];?>" alt="<?= $produk['gambarProduk'];?>">
+                    <?php else :?>
+                        <img class="card-img-top mb-3 mt-2" src="<?php echo base_url();?>images/produk/foto-produk.png" alt="Sampel Foto">
+                    <?php endif;?>
                     </div>
                     <input class="form-control" type="hidden" name="idProduk" id="idProduk" value="<?= $produk['idProduk'];?>">
                     <input class="form-control" type="hidden" name="harga" id="harga" value="<?= $produk['harga'];?>">
@@ -31,7 +34,7 @@ form_open('pembayaran/index');
                     <?php endif;?>
                 </div>
             </div>
-            </form>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

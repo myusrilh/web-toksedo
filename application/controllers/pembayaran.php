@@ -12,14 +12,14 @@ class pembayaran extends CI_Controller {
     }
     public function index()
     {
-        $data['title'] = "Pembayaran";
-        $data['pembayaran'] = $this->pembayaran_model->getAllPembayaran();
         $total = $this->input->post('harga') * $this->input->post('jumlah');
-        $data['produk'] = [
+        $data = [
+            'title' => "Pembayaran",
             'idProduk' => $this->input->post('idProduk'),
             'harga' => $this->input->post('harga'),
             'jumlah' => $this->input->post('jumlah'),
-            'totalBelanja' => $total
+            'totalBelanja' => $total,
+            'pembayaran' => $this->pembayaran_model->getAllPembayaran()
         ];
         
         $this->load->view('template/header',$data);

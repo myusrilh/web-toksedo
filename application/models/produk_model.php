@@ -35,9 +35,8 @@ class produk_model extends CI_Model {
     public function getProdukByID($id){
         $this->db->select('idProduk,gambarProduk, produk.idKategori as idKategori, namaKategori,produk.nama as nama,harga,detail');
         $this->db->from('produk');
-        $this->db->where('idProduk', $id);
         $this->db->join('kategori', 'produk.idKategori = kategori.idKategori');
-        $this->db->limit(1);
+        $this->db->where('idProduk', $id);
         
         $query = $this->db->get();
         return $query->result_array();
