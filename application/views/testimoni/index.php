@@ -11,16 +11,8 @@
                                 <img class="pt-3 card-img-top text-center" style="width:250px" src="<?php echo base_url();?>images/testimoni/tes-foto-testimoni.png" alt="tes-foto-testimoni.png">
                             <?php endif; ?>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <div class="card-body">
-                            <h4 class="text-center"><?= $testi['judulGambar'];?></h4>
+                            <h4 class="text-center"><?= $testi['judulGambar'];?></h4><br>
                             <hr>
                             <h5>Detail : </h5>
                             <p><?= $testi['detailGambar'];?></p>

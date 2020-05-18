@@ -76,26 +76,16 @@ class admin extends CI_Controller {
             $config['max_height'] = 7168;
             $config['overwrite'] = TRUE; 
             $this->load->library('upload',$config); //Load the upload CI library
-            
             if (!$this->upload->do_upload('gambar'))
             {
-                $data['title'] = "Tambah Data Testimoni";
-                $data['uploadError'] = array('upload_error' => $this->upload->display_errors());
-                $this->load->view('admin/template/header_admin',$data);
-                if ($this->session->userdata('nama')!=null) {
-                    # code...
-                    $this->load->view('admin/template/sidebar_admin');
-                }
-                $this->load->view('admin/testimoni/tambah',$data);
-                $this->load->view('admin/template/footer_admin');
+                $namaFile = null;
             }else{
                 $file_info = $this->upload->data();
                 $namaFile = $file_info['file_name'];
-                $this->testimoni_model->tambahDataTestimoni($namaFile);
-                $this->session->set_flashdata('flash-data', 'ditambahkan');
-                redirect('admin/testimoni','refresh');
-                
             }
+            $this->testimoni_model->tambahDataTestimoni($namaFile);
+            $this->session->set_flashdata('flash-data', 'ditambahkan');
+            redirect('admin/testimoni','refresh');
         }
     }
 
